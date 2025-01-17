@@ -31,12 +31,6 @@ jobs:
       - name: Terraform Init
         run: terraform init
 
-      - name: Make import_resources.sh executable
-        run: chmod +x ./import_resources.sh
-
-      - name: Import existing resources
-        run: ./import_resources.sh
-
       - name: Terraform Plan
         run: terraform plan
 
