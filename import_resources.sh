@@ -17,7 +17,10 @@ import_resource() {
 # Function to check if a resource exists
 resource_exists() {
   local resource_id=$1
+  echo "Checking if resource exists: ${resource_id}"
   az resource show --ids "${resource_id}" &> /dev/null
+  local status=$?
+  echo "Resource exists: status: ${status}"
   return $?
 }
 
